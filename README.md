@@ -1,7 +1,7 @@
 # **Optimized IP Route Lookup Using Compressed Binary Tries**
 
-
-
+[![C](https://img.shields.io/badge/C-99%2B-blue.svg)](https://en.wikipedia.org/wiki/C99)  
+[![Libraries](https://img.shields.io/badge/Libraries-stdio.h%2C%20stdlib.h%2C%20stdint.h%2C%20stdbool.h%2C%20string.h-green)](https://en.wikipedia.org/wiki/C_standard_library)  
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen)](#)
 
 ## **📖 Overview**
@@ -13,6 +13,7 @@ The project introduces an efficient solution for IP route lookup by leveraging c
    - 💡 [Key Features](#-key-features)
 - 🛠  [Implementation Details](#-implementation-details)
    - 🧩 [Components and Functionality](#-components-and-functionality)
+   - 📁 [Files & Descriptions](#-files--descriptions)
    - 🔄 [Program Flow](#-program-flow)
    - 📊 [Visual Summary of Program Flow](#-visual-summary-of-program-flow)
 - 📌 [How to Use](#-how-to-use)
@@ -76,6 +77,18 @@ The `main` function handles processing:
 The program includes tools to evaluate its efficiency:
 - Average nodes accessed and processing time per packet.
 - Memory and CPU usage statistics using `getrusage`.
+
+---
+### 📁 Files & Descriptions
+
+| **Filename**          | **Description**                                                                                                                                                                       |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **io.c**              | File responsible for input/output operations, including reading from files and displaying results to the console.                                                                    |
+| **Makefile**          | Build automation file that compiles and links the project. Includes rules for building, cleaning, and managing dependencies.                                                          |
+| **my_route_lookup.c**   | Executable binary resulting from the compilation process. It performs IP address lookups in the routing table and outputs the corresponding route information.                         |
+| **utils.c**           | Contains utility functions such as `getNetmask` to compute netmasks and a simple hash function for indexing in a hash table.                                                          |
+| **prueba1.txt, prueba2.txt, prueba3.txt**       | Input text files with a list of IP addresses for testing purposes, useful for validating the routing logic or hash table performance.                                                        |
+| **routing_table.txt, routing_table_simple.txt** | Routing table files (`FIB`) that maps network prefixes to their respective next-hop information, used for simulating and validating routing operations.                                         |
 
 ---
 
