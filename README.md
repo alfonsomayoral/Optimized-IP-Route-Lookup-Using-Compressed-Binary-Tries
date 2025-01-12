@@ -4,6 +4,8 @@
 [![Libraries](https://img.shields.io/badge/Libraries-stdio.h%2C%20stdlib.h%2C%20stdint.h%2C%20stdbool.h%2C%20string.h-green)](https://en.wikipedia.org/wiki/C_standard_library)  
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen)](#)
 
+![Preview](https://github.com/alfonsomayoral/Optimized-IP-Route-Lookup-Using-Compressed-Binary-Tries/blob/main/Project_Overview.png)
+
 ## **📖 Overview**
 
 The project introduces an efficient solution for IP route lookup by leveraging compressed binary tries (Patricia Trie). It aims to optimize the handling of large routing tables, ensuring fast lookup times and minimal memory consumption. The implementation simulates routing behavior by processing input packets, providing detailed performance metrics such as node accesses and lookup times. This makes it a valuable tool for high-performance networking systems and academic research. The optimization of the Forwarding Information Base (FIB) enhances lookup speeds while minimizing memory usage, addressing critical needs in modern networking infrastructures.
