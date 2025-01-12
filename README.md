@@ -88,7 +88,7 @@ The program includes tools to evaluate its efficiency:
 | **my_route_lookup.c**   | Executable binary resulting from the compilation process. It performs IP address lookups in the routing table and outputs the corresponding route information.                         |
 | **utils.c**           | Contains utility functions such as `getNetmask` to compute netmasks and a simple hash function for indexing in a hash table.                                                          |
 | **prueba1.txt, prueba2.txt, prueba3.txt**       | Input text files with a list of IP addresses for testing purposes, useful for validating the routing logic or hash table performance.                                                        |
-| **routing_table.txt, routing_table_simple.txt** | Routing table files (`FIB`) that maps network prefixes to their respective next-hop information, used for simulating and validating routing operations.                                         |
+| **routing_table.txt** | Routing table file (`FIB`) that maps network prefixes to their respective next-hop information, used for simulating and validating routing operations.                                         |
 
 ---
 
@@ -162,7 +162,7 @@ Execute the program with the required input files:
 ./my_route_lookup routing_table.txt prueba1.txt
 ```
 **This will create an output file (input.txt.out) containing the results.**
-- You could use any of the FIB (routing_table.txt or simple_routing_table.txt)
+- You could use any of the FIB (routing_table.txt or a simplified version)
 - You could use any of the Input File (prueba1.txt, prueba2.txt or prueba3.txt)
 - Also you could create your FIB or Input File following the same format
 
