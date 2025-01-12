@@ -10,24 +10,31 @@ The project introduces an efficient solution for IP route lookup by leveraging c
 
 ## **📋 Table of Contents**
 - 🚀 [Introduction](#-introduction)
-- 🛠  [Implementation Details & Structure](#-implementation-details--structure)
+   - 💡 [Key Features](#-key-features)
+- 🛠  [Implementation Details](#-implementation-details)
+   - 🧩 [Components and Functionality](#-components-and-functionality)
+   - 🔄 [Program Flow](#-program-flow)
+   - 📊 [Visual Summary of Program Flow](#-visual-summary-of-program-flow)
 - 📌 [How to Use](#-how-to-use)
-- 📊 [Visual Results](#-visual-results)
+
+---
 
 ## 🚀 **Introduction** 
 
 Efficient IP route lookup is critical for modern networking devices like routers and switches. This program uses a compressed binary trie to optimize the lookup process. By reducing redundancy and optimizing memory usage, the algorithm achieves a balance between speed and resource consumption.
 
-### 📌 Key Features
+### 💡 Key Features
 - **Optimized Binary Trie**: Implements a compressed Patricia Trie for efficient route searches by reducing redundant nodes.
 - **Fast & Scalable**: Optimized for large routing tables with low memory and computational overhead, performing efficient IP-to-interface mapping.
 - **Metrics Tracking**: Provides detailed statistics on search performance by measuring the time complexity and node accesses for each search.
 - **Flexible Input/Output**: Handles customizable routing table files and IP packet lists.
 - **Cross-Platform Compatibility**: Designed for Unix/Linux environments with GCC support.
 
+---
+
 ## 🛠 **Implementation Details**
 
-### Components and Functionality
+### 🧩 Components and Functionality
 
 #### Input and Output (IO)
 The program uses the `io.c` module for managing input and output files:
@@ -72,7 +79,7 @@ The program includes tools to evaluate its efficiency:
 
 ---
 
-### Program Flow
+### 🔄 Program Flow
 
 #### Initialization
 1. **File Setup**: Opens the routing table (`FIB`) and input packet file.
@@ -94,7 +101,7 @@ The program includes tools to evaluate its efficiency:
 
 ---
 
-### Visual Summary of Program Flow
+### 📊 Visual Summary of Program Flow
 
 ```mermaid
 graph TD;
@@ -107,5 +114,71 @@ graph TD;
     G --> H[Generate Performance Summary];
     H --> I[Clean Up Resources];
     I --> J[End];
+```
+---
+
+## 📌 **How to Use**
+### Prerequisites
+Before running the project, ensure the following requirements are met:
+- **Operating System**: Unix/Linux
+- **Compiler**: GCC or an equivalent C compiler
+- **Input Files**:
+  - `routes.txt`: Contains the routing table with prefixes and associated interfaces.
+  - `input.txt`: Contains a list of input IP addresses to process.
+
+---
+
+### Steps to Execute
+
+#### 1. Clone the Repository
+Download the project to your local machine:
+```bash
+git clone https://github.com/your-username/Optimized-IP-Route-Lookup-Using-Compressed-Binary-Tries.git
+cd Optimized-IP-Route-Lookup-Using-Compressed-Binary-Tries
+```
+
+#### 2. Build the Project
+Compile the source code to generate the executable:
+```bash
+make
+```
+
+#### 3. Run the Program
+Execute the program with the required input files:
+```bash
+./my_route_lookup routing_table.txt prueba1.txt
+```
+**This will create an output file (input.txt.out) containing the results.**
+- You could use any of the FIB (routing_table.txt or simple_routing_table.txt)
+- You could use any of the Input File (prueba1.txt, prueba2.txt or prueba3.txt)
+- Also you could create your FIB or Input File following the same format
+
+#### 4. View Results
+The output file (e.g., `input.txt.out`) contains lines structured in the following format:
+```bash
+<IP Address>;<Metric 1>;<Metric 2>;<Metric 3>
+```
+
+Each field represents specific details related to the route lookup process which allow users to evaluate the performance of the route lookup and the quality of routing decisions:
+
+- **IP Address**: Represents the input IP address being processed (e.g., `24.16.0.155`). This is the address for which the program performs a route lookup.
+
+- **Metric 1**: Indicates the total number of nodes accessed during the route lookup. This provides insight into the efficiency of the Patricia Trie traversal.
+
+- **Metric 2**: Represents the depth of the Patricia Trie traversal for the specific IP address. A higher number typically corresponds to a more specific match in the routing table.
+
+- **Metric 3**: Denotes the output interface or route identifier for the IP address. This is the final routing decision made by the program, such as the interface through which the packet should be forwarded.
+
+**Example for the line 24.16.0.155;89;11;190**
+```bash
+- `24.16.0.155`: The IP address being processed.
+- `89`: Nodes accessed during the lookup process.
+- `11`: Trie traversal depth for this lookup.
+- `190`: The output interface or route identifier for the address.
+```
+
+**With these steps, you can fully explore and experiment with the project. Happy coding! 🚀**
+
+
 
 
